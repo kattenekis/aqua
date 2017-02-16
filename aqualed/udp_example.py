@@ -18,9 +18,16 @@ current_time = 0
 
 while 1 :
     time.sleep(0.25)
-    current_time += 0.1
-    if current_time >=24:
-        current_time = 0
+
+    # code to fake time - debugging
+    #current_time += 0.1
+    #if current_time >=24:
+    #    current_time = 0
+
+    # code for real time use:
+    now =  datetime.datetime.now()
+    current_time = float(now.hour)+float(now.minute)/60
+
     print('Time of day: {:.2f} [hour]'.format(current_time))
     try :
         rgbw = rgbwtranslation.get_rgbw(current_time,1024)
