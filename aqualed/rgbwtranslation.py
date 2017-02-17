@@ -4,17 +4,17 @@ def get_rgbw(timecurrent,maxval):
     # insert actual time and maximum value for RGBW value PWM signal
     # output is a list of RGBW values
 
-    r =        [0, 2, 50, 40,   80, 500, 100, 100,  5,    0]
-    g =        [0, 0, 0,   0,   0,  100,  0,   0,    0,    0]
-    b =        [0, 10,100, 120,  200, 800, 800, 400 , 20,    0]
-    w =        [0, 2, 500, 80, 400, 80,  50,  30,   2,    0]
-    timeline = [0, 6, 7.3, 8.0,  11,  13,  20,  20.8, 21.5, 22]
+    r =        [0, 2, 30, 30,   80, 500, 200,   100,  5,    1,  0]
+    g =        [0, 0, 0,   0,   0,  100,  0,    0,    0,    0,  0]
+    b =        [0, 10,80, 120,  200, 800, 1000, 400 , 20,   5,  0]
+    w =        [0, 2, 30, 60,   400, 80,  100,  30,   2,    1,  0]
+    timeline = [0, 6, 7.3, 8.0,  11,  13,  20,  20.8, 21.5, 22, 23.5]
 
     # some "good" values
-    # values to range from 0 - 1024 for Adafruit uzzah feather PWM
+    # values to range from 0 - 1024 for Adafruit Huzzah feather PWM
     # =================================
     # 20:0:30:100 - nice weak "daylight" to see the fishes
-    # 100:0:1024:100 - blueish
+    # 100:0:1024:100 - strong blueish
     # =================================
 
 
