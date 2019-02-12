@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
 
+import configparser
 import socket
 import sys
 import time
 import datetime
 import rgbwtranslation
+
+# read configurationfile config.ini
+config = configparser.ConfigParser()
+config.read('aqualed.ini')
+host = config['DEFAULT']['aqualed_client_ip']
+port = int(config['DEFAULT']['aqualed_client_port'])
+looptime = float(config['DEFAULT']['looptime'])
+
+print('client IP:   ', host)
+print('client port: ', port)
 
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -12,14 +23,12 @@ except socket.error:
     print ('Failed to create socket')
     sys.exit()
 
-host = '192.168.0.118'
-# host = 'localhost'
-port = 8888
+
 timestart = time.time()
 current_time = 0
 
 while 1 :
-    time.sleep(0.25)
+    time.sleep(looptime)
 
     # code to fake time - debugging
     """
