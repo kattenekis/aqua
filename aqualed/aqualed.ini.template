@@ -1,5 +1,5 @@
 [DEFAULT]
 aqualed_client_ip = 192.168.1.118
 aqualed_client_port = 8888
-startdelay = 1
-
+startdelay = 1.0
+looptime = 0.25
